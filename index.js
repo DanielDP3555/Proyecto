@@ -4,7 +4,7 @@ const db_host =process.env.db_host || 'localhost';
 const db_user =process.env.db_user || 'root';
 const db_password =process.env.db_password || '123';
 const db_name =process.env.db_name || 'productos';
-const db_port =process.env.port || 3306;
+const db_port =process.env.db_port || 3306;
 const path =require('path')
 
 
