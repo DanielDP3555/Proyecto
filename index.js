@@ -2,7 +2,7 @@ const port =process.env.port || 4000;
 
 const db_host =process.env.db_host || 'localhost';
 const db_user =process.env.db_user || 'root';
-const db_password =process.env.db_password || '123';
+const db_password =process.env.db_password || '3555';
 const db_name =process.env.db_name || 'productos';
 const db_port =process.env.db_port || 3306;
 const path =require('path')
@@ -22,16 +22,22 @@ var connection = mysql.createConnection({
     port: db_port,
   })
 //middlewares
-    app.set('view engine', 'ejs')
-    app.use(express.static(path.join(__dirname,)))
+    // app.set('index')
+     app.use(express.static(path.join(__dirname, 'views')))
  
 //rutas
     app.get('/', (req, res)=>{
         var query = connection.query('SELECT * from productos',(error, rows)=>{
-        console.log(rows);
-        res.render('index.ejs',{rows})
+            if(error) throw error;
+
+            if(!error){
+               console.log(rows);
+               res.json(query[0])
+            }
     })
     })
 
 
-app.listen(port)
+    app.listen(4000, function(){
+        console.log('servidor en linea')
+      })
