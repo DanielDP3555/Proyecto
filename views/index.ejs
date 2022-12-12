@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../views/css/style.css">
+    <link rel="stylesheet" href="../views/css/normalize.css">
+    <title>FrontEnd Store</title>
+</head>
+<body>
+    <header class="header">
+            <img class="header__logo" src="../views/img/logo.png" alt="Logotipo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion_enlace--activo" href="../views/index.ejs">Tienda</a>
+        <a class="navegacion__enlace" href="../views/nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Nuestros productos</h1>
+        <div class="grid">
+            <%rows.forEach(productos =>{%>
+            <div class="producto">
+                    <img class="producto__imagen" src="../views/img/<%= productos.i %>.jpg" alt="imagen camisa">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre"><%= productos.nombre %></p>
+                        <p class="producto__precio"><%= productos.precio %></p>
+                    </div>
+                </a>
+            </div> <!-- fin producto -->
+            <%})%>
+            
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Arka Store - Todos los derechos reservados 2022.</p>
+    </footer>
+
+</body>
+</html>
